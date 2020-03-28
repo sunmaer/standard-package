@@ -1,0 +1,44 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "my first package",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunmaer/package.git"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "sunmaer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunmaer/package/issues"
+  },
+  "homepage": "https://github.com/sunmaer/package#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/runtime-corejs3": "^7.9.2",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "babel-loader": "^8.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "husky": "^4.2.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "eslint  --ext .js src --fix",
+      "commit-msg": "commitlint -e"
+    }
+  }
+}
