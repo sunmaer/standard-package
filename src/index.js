@@ -1,5 +1,5 @@
 import sum from './util'
 
-export default function init() {
+export function init() {
   console.log('1 + 2 =', sum(1, 2))
 }
