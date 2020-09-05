@@ -4,7 +4,7 @@
   "description": "my first package",
   "main": "dist/bundle.js",
   "scripts": {
-    "build": "webpack",
+    "build": "rimraf ./dist && rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,15 +30,24 @@
     "babel-loader": "^8.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.3",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "lint-staged": "^10.3.0",
+    "prettier": "^2.1.1",
+    "rollup": "^2.26.10"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "eslint  --ext .js src --fix",
-      "commit-msg": "commitlint -e"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

@@ -5,6 +5,8 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    'prettier',
+    'plugin:prettier/recommended'
   ],
   globals: {
     Atomics: 'readonly',
@@ -15,5 +17,6 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'no-console': 'off'
   },
 };

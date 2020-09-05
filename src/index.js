@@ -1,8 +1,5 @@
-import {
-  sum,
-} from './util';
+import sum from './util'
 
-let b;
 export default function init() {
-  console.log('1 + 1 =', sum(1, 1));
+  console.log('1 + 2 =', sum(1, 2))
 }
